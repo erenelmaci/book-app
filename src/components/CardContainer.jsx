@@ -29,27 +29,28 @@ const CardContainer = () => {
     }
   }
 
-  const addBook = async (book) => {
-    const BOOK_APP_URL =
-      "https://book-a-9034f-default-rtdb.firebaseio.com/data.json"
-    try {
-      const response = await axios.post(BOOK_APP_URL, book)
+  // const addBook = async (book) => {
+  //   const BOOK_APP_URL =
+  //     "https://book-a-9034f-default-rtdb.firebaseio.com/data.json"
+  //   try {
+  //     const response = await axios.post(BOOK_APP_URL, book)
 
-      // Firebase, eklenen verinin key özelliğini döndürür.
-      // Bu key özelliği string türünde olduğundan, bu özelliği number türüne dönüştürmemiz gerekir.
-      const addBook = {
-        ...book,
-        id: parseInt(response.data.name),
-      }
+  //     // Firebase, eklenen verinin key özelliğini döndürür.
+  //     // Bu key özelliği string türünde olduğundan, bu özelliği number türüne dönüştürmemiz gerekir.
+  //     const addedBook = {
+  //       ...book,
+  //       id: parseInt(response.data.name),
+  //     }
 
-      setBooks((prevBooks) => [...prevBooks, addedBook])
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //     setBooks((prevBooks) => [...prevBooks, addedBook])
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   useEffect(() => {
     dataExtraction()
+    // addBook()
   }, [])
 
   return (
