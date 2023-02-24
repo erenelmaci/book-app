@@ -34,7 +34,8 @@ const AddBookForm = (props) => {
       await axios.post(BOOK_APP_URL, newBook)
       setAddBooks([...books, newBook])
       setId(id + 1)
-      console.log(newBook)
+      // console.log(newBook)
+      window.location.reload()
     } catch (error) {
       console.log(error)
     }
