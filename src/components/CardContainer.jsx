@@ -37,7 +37,7 @@ const CardContainer = () => {
 
       // Firebase, eklenen verinin key özelliğini döndürür.
       // Bu key özelliği string türünde olduğundan, bu özelliği number türüne dönüştürmemiz gerekir.
-      const addedBook = {
+      const addBook = {
         ...book,
         id: parseInt(response.data.name),
       }
