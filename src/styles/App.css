@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+body{
+  background-image: url(../images/background-images.jpg);
+  background-repeat: repeat;
+  background-size: 100% auto;
+}
+
