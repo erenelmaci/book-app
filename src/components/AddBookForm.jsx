@@ -19,7 +19,6 @@ const AddBookForm = (props) => {
   const [id, setId] = useState(data.length + 1)
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
     const newBook = {
       id: id,
       title: bookName,
@@ -35,7 +34,6 @@ const AddBookForm = (props) => {
       setAddBooks([...books, newBook])
       setId(id + 1)
       // console.log(newBook)
-      window.location.reload()
     } catch (error) {
       console.log(error)
     }
@@ -66,6 +64,7 @@ const AddBookForm = (props) => {
               type="text"
               onChange={(e) => setbookAuthor(e.target.value)}
               placeholder="Enter Author"
+              required
             />
             <Form.Text className="text-warning">
               please enter the author name
@@ -77,6 +76,7 @@ const AddBookForm = (props) => {
               type="text"
               onChange={(e) => setbookPublisher(e.target.value)}
               placeholder="Enter Publisher"
+              required
             />
             <Form.Text className="text-warning">
               please enter the book name
@@ -89,6 +89,7 @@ const AddBookForm = (props) => {
                 maxLength={4}
                 placeholder="Enter Publication Date"
                 onChange={(e) => setbookDate(e.target.value)}
+                required
               />
               <Form.Text className="text-warning">
                 please enter the publication date
@@ -100,6 +101,7 @@ const AddBookForm = (props) => {
                 type="url"
                 onChange={(e) => setimageUrl(e.target.value)}
                 placeholder="Enter Image URL"
+                required
               />
               <Form.Text className="text-warning">
                 please enter the Image URL

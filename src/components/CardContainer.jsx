@@ -54,7 +54,7 @@ const CardContainer = () => {
               )
               .map((book) => (
                 <Col md={6} lg={4} xl={3} key={book.id}>
-                  <BookCard {...book} />
+                  <BookCard key={book} {...book} />
                 </Col>
               ))}
         </Row>
