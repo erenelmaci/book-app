@@ -19,6 +19,13 @@ const AddBookForm = (props) => {
   const [id, setId] = useState(data.length + 1)
 
   const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    if (!bookName || !bookAuthor || !bookPublisher || !bookDate || !imageUrl) {
+      alert("Please fill all fields")
+      return
+    }
+
     const newBook = {
       id: id,
       title: bookName,
@@ -33,7 +40,6 @@ const AddBookForm = (props) => {
       await axios.post(BOOK_APP_URL, newBook)
       setAddBooks([...books, newBook])
       setId(id + 1)
-      // console.log(newBook)
     } catch (error) {
       console.log(error)
     }
@@ -53,6 +59,7 @@ const AddBookForm = (props) => {
               type="text"
               onChange={(e) => setbookName(e.target.value)}
               placeholder="Enter Title"
+              required
             />
             <Form.Text className="text-warning">
               please enter the book name
